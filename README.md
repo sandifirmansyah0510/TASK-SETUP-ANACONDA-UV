@@ -22,7 +22,7 @@ Terakhir, ada UV. Ini bukan nama planet baru ya, tapi cuma nama buat "ruangan" k
 Gimana, sekarang udah kebayang kan bedanya Anaconda, Conda, sama UV? Mereka ini trio yang bakal bikin petualanganmu di dunia data science jadi lebih gampang dan menyenangkan! Yuk, kita lanjut ke bagian instalasi!
 
 
-. Download Anaconda
+# Cara Download Anaconda
 Pertama yang harus kita lakukan adalah download anaconda dan buka website resmi Anaconda (pastikan wajib website resmi ya).
 
 Buka situs resminya di sini guys : 👉 https://www.anaconda.com/products/distribution
@@ -44,7 +44,7 @@ Dont :
     - Kalau kamu download dari sumber yang gak jelas atau situs pihak ketiga, bisa jadi file-nya udah dimodifikasi dan disisipi malware, spyware, atau virus yang bahaya banget buat laptop kamu 😱. 
 
     - File dari luar bisa aja palsu, atau udah di-crack yang bikin sistem kamu gak stabil dan rawan error.
-2. Install Anaconda
+# Install Anaconda
 🐍 Kenapa Install ANACONDA? Sebagai pemula anaconda itu ibarat = Paket Komplit 📦 Udah langsung bawa Python + ratusan tools penting buat data science, machine learning, statistik, dll. Cocok banget untuk pemula karena install sekali, dapet semua.
 
 Setelah sebelumnya kita berhasil download anaconda di website resmi
@@ -131,3 +131,94 @@ Don'ts:
     - Hati-hati saat edit variabel lingkungan.
 
     - Jangan asal tambahin folder lain dari dalam Anaconda ke PATH
+
+**Membuat Lingkungan Conda Baru**
+Kalau di analogikan secara sederhana "Lingkungan Conda tuh kayak kosan terpisah buat tiap proyek. Jadi tiap proyek gak rebutan isi kulkas (library) dan gak tabrakan Python-nya". Sama kayak baju dalam lemari yang kita susun sesuai gayanya, misal celana bersama celana, baju bersama baju, jilbab bersama dengan jilbab lainnya, begitulah analoginya. Dan tujuan akhirnya adalah agar semua menjadi rapi, tersusun dan ga saling berantem.
+
+Jadi step by step yang harus kalian lakukan saat ingin membuat lingkungan conda baru adalah :
+
+    - Ketik di terminal: conda create -n nama_env python=3.9
+
+![Screenshot 2025-06-14 222942](https://github.com/user-attachments/assets/c9a4862a-3ca3-4734-94ea-faa769621a8f)
+
+Do's:
+
+    - kasih nama environment-nya (bebas) yang mudah diingat dan disukai
+
+    - tentuin versi Python (bisa disesuaikan)
+Don'ts:
+
+    - jangan asal campur-campur library
+
+    - jangan asal hapus environment sebelum benar-benar yakin
+Bagian 2. UV Environment
+1. Membuat UV Environment
+Apa sih UV Environment itu ??? UV Environment adalah virtual environment Python yang dibuat dan dikelola pakai uv. Kita analogikan begini, setelah aku baca dan cari tau bahwa conda itu ibarat garasi super gede dan lengkap tapi buka garasinya masih lama, ribet pokoknya makan waktu.
+
+Nah, sedangkan si UV ini garasi kecil, minimalis tapi canggih dan super cepat.
+
+Kenapa kita pakai UV ya karena super cepat, praktik, ga ribet dan cocok buat aku dan temen-temen ETL yang suka praktis.
+
+Caranya adalah sebagai berikut :
+
+    - Buka CMD dan pastikan conda sedang tidak aktif
+
+    - Ketik: pip install uv
+
+![Screenshot 2025-06-13 223819](https://github.com/user-attachments/assets/657bf030-cebe-4943-a633-e7d240b776fb)
+
+    - Jika berhasil maka akan keluar Output seperti Successfully installed uv-0.7.12
+2. Menginisialisasi Proyek UV
+Apa itu inisialisasi proyek uv ? Menginisialisasi proyek uv artinya nyiapin folder kerja + environment Python-nya + file dependensi supaya lo bisa langsung ngoding dengan sistem yang terstruktur dan modern.
+
+Kenapa kira perlu menginisialisasi proyek uv? Karena kalau kita coding bikin proyek phyton tanpa environment maka semua akan menjadi berantakan dan akan menggangu proyek yang lain.
+
+Adapun cara-caranya adalah :
+
+1. Pastikan environment UV sudah aktif
+
+2. Ketik: uv init ghost_intellixuv
+
+3. Untuk mencari dic kembali maka ketik : Cd ghost intellixuv
+
+4. Output menunjukkan proyek diinisialisasi di C:\Users\NAMA_ANDA\ghost_intellix\ghost_intellixuv.
+uv-init
+
+![Screenshot 2025-06-14 200453](https://github.com/user-attachments/assets/81a42a5f-cbc4-4369-842b-b698c57aa316)
+
+3. Install Paket yang dibutuhkan
+Apa yang dimaksud dengan install paket yang dibutuhkan ? Artinya adalah Install library atau tools Python yang lo perlukan ke dalam environment uv (bukan ke sistem global). Misal lo bikin proyek analisis data. Kita pasti butuh library kayak:
+
+    - numpy
+
+    -pandas
+
+-matplotlib
+Nah, semua itu kita install ke dalam .venv (environment lokal) yang udah dibuat pake uv, bukan ke Python utama di laptop.
+
+Install paket di uv environment itu kayak masukin alat ke toolbox pribadi. Gak minjem alat tukang sebelah, gak ribet rebutan, semua aman di tempat sendiri. Kalo kita mau upgrade, hapus, atau backup, tinggal gas aja.
+
+Kenapa harus install paket yang dibutuhkan ? karena setiap proyek kebutuhannya berbeda-beda dan hal ini agar proyek kita menjadi bersih dan rapi.
+
+langkah-langkah yang harus kita lakukan adalah :
+
+    - Ketik: uv add pandas
+    
+    - maka outputnya akan seperti ini :
+
+![Screenshot 2025-06-14 231813](https://github.com/user-attachments/assets/68397dc2-9788-45fa-a046-9515c6c447c0)
+
+Nonaktifkan Lingkungan UV
+Apa? Nonaktifkan environment uv_env apabila sudah selesai menggunakan.
+
+Kenapa? Agar shell kembali ke environment base atau default.
+
+Langkah-langkah:
+
+    - Ketik: .venv\Scripts\deactivate
+    - Prompt kembali ke C:\Users\NAMA_ANDA\ghost_intellix\ghost_intellixuv>.
+
+![Screenshot 2025-06-14 232231](https://github.com/user-attachments/assets/c07277d8-ebcd-4f7f-95ab-8a01217f1743)
+
+
+
